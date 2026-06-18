@@ -108,13 +108,16 @@ API
 
 ---
 
-📂 Архитектура проекта
+📂 
+## Архитектура проекта
 
+```text
 Weather-App/
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
+```
 
 index.html
 
