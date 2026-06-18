@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Forecast-App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="header-top">
+            <h1>Погода</h1>
+            <button id="theme-toggle" class="theme-btn" title="Сменить тему" aria-label="Переключить тему">
+                <span id="theme-icon">☀️</span>
+            </button>
+        </header>
+
+        <div class="search-box">
+            <div class="input-wrapper">
+                <input type="text" id="city-input" placeholder="Введите название города..." autocomplete="off" aria-label="Название города">
+                <button id="location-btn" class="btn-icon" title="Моё местоположение" aria-label="Определить локацию">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+            <div class="button-group">
+                <button id="search-btn" class="btn-primary">Поиск</button>
+                <button id="clear-btn" class="btn-secondary" title="Очистить" aria-label="Очистить поиск">×</button>
+            </div>
+        </div>
+
+        <div id="error-message" class="error-card hidden"></div>
+
+        <div id="skeleton-loader" class="skeleton-card hidden">
+            <div class="skeleton skeleton-text title"></div>
+            <div class="skeleton skeleton-circle"></div>
+            <div class="skeleton skeleton-text desc"></div>
+            <div class="skeleton-grid">
+                <div class="skeleton skeleton-box"></div>
+                <div class="skeleton skeleton-box"></div>
+            </div>
+        </div>
+
+        <main id="weather-card" class="weather-card hidden">
+            <div class="main-info">
+                <h2 id="city-name">Город</h2>
+                <div class="temp-wrapper">
+                    <span id="temperature">0</span><span class="unit">°C</span>
+                </div>
+                <div class="description-container">
+                    <img id="weather-icon" src="" alt="Иконка погоды">
+                    <p id="weather-description">Описание</p>
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Влажность</span>
+                    <span id="humidity" class="detail-value">0%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Ветер</span>
+                    <span id="wind-speed" class="detail-value">0 м/с</span>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>Почасовой прогноз</h3>
+                <div id="hourly-forecast" class="hourly-container"></div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>Прогноз на 5 дней</h3>
+                <div id="daily-forecast" class="daily-container"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
